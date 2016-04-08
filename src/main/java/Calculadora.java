@@ -1,46 +1,55 @@
 package main.java;
 
+import java.util.Stack;
 
-public class Calculadora implements Runnable {
-	
-	private int a;
-	private int b;
-	private String operacion;
-	public int resultado=0;
-	
-	public Calculadora(int a, int b, String operacion) {
-		this.a = a;
-		this.b = b;
-		this.operacion = operacion;
-	}
+public class Calculadora {
 
-	@Override
-	public void run() {
-		switch(operacion){
-		
-		case "+" :
-			System.out.println("resultado de la suma = "+ suma(a,b));
-			
-			break;
-		
-		case "-" :
-			System.out.println("resultado de la resta = "+ resta(a,b));		
-			break;
-		default:
-			System.out.println("no es un feature disponible actualice a la nueva version");
-		
+	private int resultado;
+
+	public Calculadora(Stack<String> pila) {
+		resultado = getNumber(pila.pop());
+		String num = null;
+		while (!pila.empty()) {
+			num = pila.pop();
+			switch (esOperador(num)) {
+			case 1:
+				suma(getNumber(pila.pop()));
+				break;
+			case 2:
+				resta(getNumber(pila.pop()));
+				break;
+			case 0:
+				System.out.println("Error de sincronismo en Pila");
+			}
 		}
 	}
 
-	private int suma(int a,int b){
-		
-		this.resultado=a+b;
-		return resultado;
+	private void suma(int num) {
+
+		resultado = resultado + num;
 	}
-	
-	private int resta(int a,int b){
-		
-		this.resultado=a-b;
+
+	private void resta(int num) {
+
+		resultado = resultado - num;
+	}
+
+	private int getNumber(String num) {
+		return Integer.parseInt(num);
+	}
+
+	private int esOperador(String num) {
+		switch (num) {
+		case "+":
+			return 1;
+		case "-":
+			return 2;
+		default:
+			return 0;
+		}
+	}
+
+	public int getResultado() {
 		return resultado;
 	}
 }
