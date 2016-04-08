@@ -31,7 +31,7 @@ public class Calculadora {
 
 	private void resta(int num) {
 
-		resultado = resultado - num;
+		resultado = num - resultado;
 	}
 
 	private int getNumber(String num) {
