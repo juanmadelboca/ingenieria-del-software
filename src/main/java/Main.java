@@ -13,7 +13,7 @@ public class Main {
 			lect.leer();
 			Calculadora calc = new Calculadora(lect.getCola());
 			System.out.println("El resultado es:" + calc.getResultado());
-			System.out.println("Desea hacer otra operación? y/n");
+			System.out.println("Desea hacer otra operaciÃ³n? y/n");
 			if (s.next().equals("n"))
 				break;
 		}

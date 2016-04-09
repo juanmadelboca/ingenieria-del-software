@@ -39,7 +39,7 @@ public class Lectora {
 		}
 	}
 
-	private static boolean esValido(String s) {
+	private boolean esValido(String s) {
 		if (s.equals("+") || s.equals("-"))
 			return true;
 		else
