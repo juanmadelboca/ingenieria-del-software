@@ -40,7 +40,7 @@ public class Lectora {
 	}
 
 	private boolean esValido(String s) {
-		if (s.equals("+") || s.equals("-"))
+		if (s.equals("+") || s.equals("-")|| s.equals("*")|| s.equals("/"))
 			return true;
 		else
 			return false;

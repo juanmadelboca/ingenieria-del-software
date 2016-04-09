@@ -46,22 +46,23 @@ public class CalculadoraTest {
 		Calculadora c=new Calculadora(cola);
 		assertTrue(c.getResultado()==872);
 	}
-public void sumaCompleja1(){
-	LinkedList<String> cola= new LinkedList<String>();
-	cola.add("9");
-	cola.add("+");
-	cola.add("22");
-	cola.add("+");
-	cola.add("1920");
-	cola.add("+");
-	cola.add("59");
-	cola.add("+");
-	cola.add("915");
-	cola.add("+");
-	cola.add("38");
-	Calculadora c=new Calculadora(cola);
-	assertFalse(c.getResultado()==872);
-	}
+	@Test
+	public void sumaCompleja1(){
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("9");
+		cola.add("+");
+		cola.add("22");
+		cola.add("+");
+		cola.add("1920");
+		cola.add("+");
+		cola.add("59");
+		cola.add("+");
+		cola.add("915");
+		cola.add("+");
+		cola.add("38");
+		Calculadora c=new Calculadora(cola);
+		assertFalse(c.getResultado()==872);
+		}
 	@Test
 	public void restaCompleja() {
 		LinkedList<String> cola= new LinkedList<String>();
@@ -90,6 +91,7 @@ public void sumaCompleja1(){
 		Calculadora c=new Calculadora(cola);
 		assertTrue(c.getResultado()==4);
 	}
+	@Test
 	public void sumRestCompleja1(){
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("1");
@@ -122,6 +124,12 @@ public void sumaCompleja1(){
 		cola.add("330");
 		Calculadora c=new Calculadora(cola);
 		assertTrue(c.getResultado()==-58);
+	}
+	@Test
+	public void TestearResultado(){
+		LinkedList<String> cola= new LinkedList<String>();
+		Calculadora c=new Calculadora(cola);
+		assertNull(c.getResultado());
 	}
 	
 }
