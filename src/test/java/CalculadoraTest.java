@@ -8,9 +8,80 @@ import org.junit.Test;
 
 public class CalculadoraTest {
 	
+	@Test
+	public void multiplicacion0Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("45");
+		cola.add("*");
+		cola.add("3");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==135);
+	}
+	@Test
+	public void multiplicacion1Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("3");
+		cola.add("*");
+		cola.add("45");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==135);
+	}
+	@Test
+	public void multiplicacion2Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("33");
+		cola.add("*");
+		cola.add("3");
+		Calculadora c=new Calculadora(cola);
+		assertFalse(c.getResultado()==100);
+	}
+	@Test
+	public void division0Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("37");
+		cola.add("/");
+		cola.add("3");
+		Calculadora c=new Calculadora(cola);
+		assertFalse(c.getResultado()==45);
+	}
+	@Test
+	public void division1Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("19");
+		cola.add("/");
+		cola.add("2");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==9);
+	}
+	@Test
+	public void division2Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("16");
+		cola.add("/");
+		cola.add("2");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==8);
+	}
 
 	@Test
-	public void sumaSimple() {
+	public void division3Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("2");
+		cola.add("/");
+		cola.add("2");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==1);
+	}
+
+	@Test
+	public void nadaTest(){
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("2");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==2);
+	}
+	@Test
+	public void sumaSimpleTest() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("2");
 		cola.add("+");
@@ -20,7 +91,7 @@ public class CalculadoraTest {
 	}
 	
 	@Test
-	public void restaSimple() {
+	public void restaSimpleTest() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("2");
 		cola.add("-");
@@ -30,7 +101,7 @@ public class CalculadoraTest {
 	}
 	
 	@Test
-	public void sumaCompleja() {
+	public void sumaComplejaTest() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("150");
 		cola.add("+");
@@ -47,7 +118,7 @@ public class CalculadoraTest {
 		assertTrue(c.getResultado()==872);
 	}
 	@Test
-	public void sumaCompleja1(){
+	public void sumaCompleja1Test(){
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("9");
 		cola.add("+");
@@ -64,7 +135,7 @@ public class CalculadoraTest {
 		assertFalse(c.getResultado()==872);
 		}
 	@Test
-	public void restaCompleja() {
+	public void restaComplejaTest() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("150");
 		cola.add("-");
@@ -81,7 +152,7 @@ public class CalculadoraTest {
 		assertTrue(c.getResultado()==-572);
 	}
 	@Test
-	public void sumRestSimple() {
+	public void sumRestSimpleTest() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("4");
 		cola.add("+");
@@ -92,7 +163,7 @@ public class CalculadoraTest {
 		assertTrue(c.getResultado()==4);
 	}
 	@Test
-	public void sumRestCompleja1(){
+	public void sumRestCompleja1Test(){
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("1");
 		cola.add("+");
@@ -109,7 +180,7 @@ public class CalculadoraTest {
 		assertFalse(c.getResultado()==0);
 	}
 	@Test
-	public void sumRestCompleja() {
+	public void sumRestComplejaTest() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("150");
 		cola.add("+");
@@ -125,11 +196,6 @@ public class CalculadoraTest {
 		Calculadora c=new Calculadora(cola);
 		assertTrue(c.getResultado()==-58);
 	}
-	@Test
-	public void TestearResultado(){
-		LinkedList<String> cola= new LinkedList<String>();
-		Calculadora c=new Calculadora(cola);
-		assertNull(c.getResultado());
-	}
+	
 	
 }
