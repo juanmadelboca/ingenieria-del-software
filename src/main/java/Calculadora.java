@@ -18,6 +18,9 @@ public class Calculadora {
 			case 2:
 				resta(getNumber(cola.remove()));
 				break;
+			case 3:
+				multiplicacion(getNumber(cola.remove()));
+				break;
 			case 0:
 				System.out.println("Error de sincronismo en cola");
 			}
@@ -33,6 +36,9 @@ public class Calculadora {
 
 		resultado = resultado - num;
 	}
+	private void multiplicacion(int num){
+		resultado=resultado*num;
+	}
 
 	private int getNumber(String num) {
 		return Integer.parseInt(num);
@@ -44,6 +50,8 @@ public class Calculadora {
 			return 1;
 		case "-":
 			return 2;
+		case "*":
+			return 3;
 		default:
 			return 0;
 		}

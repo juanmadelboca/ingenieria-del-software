@@ -10,6 +10,33 @@ public class CalculadoraTest {
 	
 
 	@Test
+	public void multiplicacion0Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("45");
+		cola.add("*");
+		cola.add("3");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==135);
+	}
+	@Test
+	public void multiplicacion1Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("3");
+		cola.add("*");
+		cola.add("45");
+		Calculadora c=new Calculadora(cola);
+		assertTrue(c.getResultado()==135);
+	}
+	@Test
+	public void multiplicacion2Test() {
+		LinkedList<String> cola= new LinkedList<String>();
+		cola.add("33");
+		cola.add("*");
+		cola.add("3");
+		Calculadora c=new Calculadora(cola);
+		assertFalse(c.getResultado()==100);
+	}
+	@Test
 	public void sumaSimple() {
 		LinkedList<String> cola= new LinkedList<String>();
 		cola.add("2");
