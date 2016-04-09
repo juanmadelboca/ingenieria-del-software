@@ -11,7 +11,7 @@ public class Main {
 			s = new Scanner(System.in);
 			Lectora lect = new Lectora();
 			lect.leer();
-			Calculadora calc = new Calculadora(lect.getPila());
+			Calculadora calc = new Calculadora(lect.getCola());
 			System.out.println("El resultado es:" + calc.getResultado());
 			System.out.println("Desea hacer otra operación? y/n");
 			if (s.next().equals("n"))

@@ -1,25 +1,25 @@
 package main.java;
 
-import java.util.Stack;
+import java.util.LinkedList;
 
 public class Calculadora {
 
 	private int resultado;
 
-	public Calculadora(Stack<String> pila) {
-		resultado = getNumber(pila.pop());
+	public Calculadora(LinkedList<String> cola) {
+		resultado = getNumber(cola.remove());
 		String num = null;
-		while (!pila.empty()) {
-			num = pila.pop();
+		while (!cola.isEmpty()) {
+			num = cola.remove();
 			switch (esOperador(num)) {
 			case 1:
-				suma(getNumber(pila.pop()));
+				suma(getNumber(cola.remove()));
 				break;
 			case 2:
-				resta(getNumber(pila.pop()));
+				resta(getNumber(cola.remove()));
 				break;
 			case 0:
-				System.out.println("Error de sincronismo en Pila");
+				System.out.println("Error de sincronismo en cola");
 			}
 		}
 	}
@@ -31,7 +31,7 @@ public class Calculadora {
 
 	private void resta(int num) {
 
-		resultado = num - resultado;
+		resultado = resultado - num;
 	}
 
 	private int getNumber(String num) {

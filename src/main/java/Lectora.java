@@ -1,15 +1,15 @@
 package main.java;
 
 import java.util.Scanner;
-import java.util.Stack;
+import java.util.LinkedList;
 
 public class Lectora {
 
-	private Stack<String> pila;
+	private LinkedList<String> cola;
 	private Scanner s;
 
 	public Lectora() {
-		pila = new Stack<String>();
+		cola= new LinkedList<String>();
 	}
 
 	public void leer() {
@@ -18,23 +18,23 @@ public class Lectora {
 		while (!salir) {
 			do {
 				System.out.println("Ingrese el numero");
-				pila.push(s.next());
-				if (esNum(pila.peek()))
+				cola.add(s.next());
+				if (esNum(cola.getLast()))
 					break;
 				System.out.println("Error: Ingreso incorrecto");
-				pila.pop();
+				cola.removeLast();
 			} while (true);
 			do {
 				System.out.println("Ingrese el operador o = para finalizar");
-				pila.push(s.next());
-				if (pila.peek().equals("=")) {
+				cola.add(s.next());
+				if (cola.getLast().equals("=")) {
 					salir = true;
-					pila.pop();
+					cola.removeLast();
 					break;
-				} else if (esValido(pila.peek()))
+				} else if (esValido(cola.getLast()))
 					break;
 				System.out.println("Error: Ingreso incorrecto");
-				pila.pop();
+				cola.removeLast();
 			} while (true);
 		}
 	}
@@ -55,8 +55,8 @@ public class Lectora {
 		return false;
 	}
 
-	public Stack<String> getPila() {
-		return pila;
+	public LinkedList<String> getCola() {
+		return cola;
 	}
 
 }
