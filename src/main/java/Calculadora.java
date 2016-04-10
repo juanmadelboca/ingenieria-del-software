@@ -24,6 +24,9 @@ public class Calculadora {
 			case 4:
 				division(getNumber(cola.remove()));
 				break;
+			case 5:
+				porcentaje(getNumber(cola.remove()));
+				break;
 			case 0:
 				System.out.println("Error de sincronismo en cola");
 			}
@@ -48,6 +51,10 @@ public class Calculadora {
 		resultado = resultado / num;
 	}
 
+	private void porcentaje(int num) {
+		resultado = resultado % num;
+	}
+
 	private int getNumber(String num) {
 		return Integer.parseInt(num);
 	}
@@ -62,6 +69,8 @@ public class Calculadora {
 			return 3;
 		case "/":
 			return 4;
+		case "%":
+			return 5;
 		default:
 			return 0;
 		}
