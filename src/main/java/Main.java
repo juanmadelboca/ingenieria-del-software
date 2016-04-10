@@ -11,11 +11,11 @@ public class Main {
 		while (true) {
 			s = new Scanner(System.in);
 			Lectora lect = new Lectora();
-			lect.leer(); 
-			LinkedList<String> cola= new LinkedList<String>(lect.getCola());
+			lect.leer();
+			LinkedList<String> cola = new LinkedList<String>(lect.getCola());
 			Calculadora calc = new Calculadora(cola);
 			System.out.println("El resultado es:" + calc.getResultado());
-			System.out.println("Desea hacer otra operación? y/n");
+			System.out.println("Desea hacer otra operacion? y/n");
 			if (s.next().equals("n"))
 				break;
 		}

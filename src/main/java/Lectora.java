@@ -9,7 +9,7 @@ public class Lectora {
 	private Scanner s;
 
 	public Lectora() {
-		cola= new LinkedList<String>();
+		cola = new LinkedList<String>();
 	}
 
 	public void leer() {
@@ -40,7 +40,7 @@ public class Lectora {
 	}
 
 	private boolean esValido(String s) {
-		if (s.equals("+") || s.equals("-")|| s.equals("*")|| s.equals("/"))
+		if (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/"))
 			return true;
 		else
 			return false;

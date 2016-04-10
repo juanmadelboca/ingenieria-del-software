@@ -39,12 +39,15 @@ public class Calculadora {
 
 		resultado = resultado - num;
 	}
-	private void multiplicacion(int num){
-		resultado=resultado*num;
+
+	private void multiplicacion(int num) {
+		resultado = resultado * num;
 	}
-	private void division(int num){
-		resultado=resultado/num;
+
+	private void division(int num) {
+		resultado = resultado / num;
 	}
+
 	private int getNumber(String num) {
 		return Integer.parseInt(num);
 	}
