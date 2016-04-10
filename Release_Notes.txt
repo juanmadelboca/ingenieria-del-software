@@ -29,3 +29,10 @@ título: Calculadora suma, resta, multiplicacion y porcentaje
 Comentarios: se han corrido UnitTest para el control de las funciones de suma, resta, multiplicacion y porcentaje los cuales han pasado exitosamente.
 
 
+Fecha: 2016/04/10
+author: Del Boca Juan Manuel	
+Version: 2.1.0
+título: Calculadora suma, resta, multiplicacion,division y porcentaje
+Comentarios: se han corrido UnitTest para el control de las funciones de suma, resta, multiplicacion, division y porcentaje los cuales han pasado exitosamente.
+
+
