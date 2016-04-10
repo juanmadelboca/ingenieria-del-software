@@ -7,6 +7,10 @@ public class Main {
 	private static Scanner s;
 
 	public static void main(String[] args) {
+		int numero= 10;
+		numero= numero % 200;
+		System.out.println("Numero " +numero);
+		
 		while (true) {
 			s = new Scanner(System.in);
 			Lectora lect = new Lectora();
@@ -17,6 +21,7 @@ public class Main {
 			if (s.next().equals("n"))
 				break;
 		}
+		
 
 	}
 }
